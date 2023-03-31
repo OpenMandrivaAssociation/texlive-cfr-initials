@@ -1,6 +1,6 @@
 Name:		texlive-cfr-initials
 Version:	61719
-Release:	1
+Release:	2
 Summary:	LaTeX packages for use of initials
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/cfr-initials
