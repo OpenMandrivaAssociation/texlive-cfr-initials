@@ -3,7 +3,7 @@ Version:	61719
 Release:	2
 Summary:	LaTeX packages for use of initials
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/cfr-initials
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/cfr-initials
 License:	lppl1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cfr-initials.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cfr-initials.doc.r%{version}.tar.xz
