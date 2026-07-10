@@ -1,42 +1,27 @@
-Name:		texlive-cfr-initials
-Version:	61719
-Release:	2
+%global tl_name cfr-initials
+%global tl_revision 75712
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.01
+Release:	%{tl_revision}.1
 Summary:	LaTeX packages for use of initials
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/cfr-initials
 License:	lppl1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cfr-initials.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cfr-initials.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/cfr-initials.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/cfr-initials.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This is a set of 23 tiny packages designed to make it easier to
-use fonts from the initials package in LaTeX, e.g. with the
-lettrine package. It is a response to comments on an answer at
-TeX Stack Exchange (https://tex.stackexchange.com/a/236410/)
-requesting sample package files for others to copy. I had
-previously assumed these were too trivial to be of interest,
-but if they would be useful, then I would prefer them to be
-generally available via CTAN.
+This is a set of 23 tiny packages designed to make it easier to use
+fonts from the initials package in LaTeX, e.g. with the lettrine
+package. It is a response to comments on an answer at TeX StackExchange
+requesting sample package files for others to copy. I had previously
+assumed these were too trivial to be of interest, but if they would be
+useful, then I would prefer them to be generally available via CTAN.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/cfr-initials
-%doc %{_texmfdistdir}/doc/latex/cfr-initials
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
